@@ -13,7 +13,7 @@ class ElasticsearchLocal < Formula
     run [opt_bin/"elasticsearch"]
     working_dir opt_prefix
     environment_variables JAVA_HOME: "/opt/homebrew/opt/openjdk@17"
-    log_path "/tmp/elasticsearch-local.log"
-    error_log_path "/tmp/elasticsearch-local.err.log"
+    log_path "/logs/elasticsearch-local.log"
+    error_log_path "/logs/elasticsearch-local.err.log"
   end
 end
