@@ -6,9 +6,7 @@ class ElasticsearchLocal < Formula
   sha256 "06ee63e50b77e7d88b5292b7fb173564e069b453cd6a7e948570f290714b62ac"
 
   def install
-    cd "elasticsearch-8.17.4-darwin-x86_64" do
-      prefix.install Dir["*"]
-    end
+    prefix.install Dir["*"]
   end
 
   service do
