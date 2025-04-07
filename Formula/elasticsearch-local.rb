@@ -20,7 +20,7 @@ class ElasticsearchLocal < Formula
   service do
     run [opt_bin/"elasticsearch"]
     environment_variables(
-      "JAVA_HOME" => "/opt/homebrew/opt/openjdk@17"
+      "JAVA_HOME" => "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"
     )
     working_dir var
     log_path var/"log/elasticsearch-local.log"
