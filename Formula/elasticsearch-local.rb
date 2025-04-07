@@ -7,6 +7,12 @@ class ElasticsearchLocal < Formula
 
   def install
     libexec.install Dir["*"]
+
+    # Удаляем жёстко прописанный путь к jdk.app
+    inreplace "#{libexec}/bin/elasticsearch-env",
+              'ES_JAVA_HOME="${ES_HOME}/jdk.app/Contents/Home"',
+              'ES_JAVA_HOME=""'
+
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
