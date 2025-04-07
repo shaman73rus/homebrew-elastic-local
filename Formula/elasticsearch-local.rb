@@ -10,7 +10,7 @@ class ElasticsearchLocal < Formula
   end
 
   service do
-    run [opt_bin/"bin/elasticsearch"]
+    run [opt_bin/"elasticsearch"]
     working_dir opt_prefix
     environment_variables JAVA_HOME: "/opt/homebrew/opt/openjdk@17"
     log_path "/tmp/elasticsearch-local.log"
