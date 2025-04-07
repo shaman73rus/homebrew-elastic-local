@@ -9,8 +9,6 @@ class ElasticsearchLocal < Formula
     prefix.install Dir["*"]
   end
 
-  plist_options manual: "elasticsearch"
-
   def plist
     <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
