@@ -3,7 +3,7 @@ class ElasticsearchLocal < Formula
   homepage "https://github.com/shaman73rus/homebrew-elastic-local"
   version "8.17.4"
   url "file:///opt/homebrew/opt/elasticsearch-8.17.4-darwin-x86_64.tar.gz"
-  sha256 "dummy" # неважно, так как мы не используем скачивание
+  sha256 "06ee63e50b77e7d88b5292b7fb173564e069b453cd6a7e948570f290714b62ac"
 
   def install
     prefix.install Dir["*"]
