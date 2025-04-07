@@ -6,13 +6,13 @@ class ElasticsearchLocal < Formula
   sha256 "06ee63e50b77e7d88b5292b7fb173564e069b453cd6a7e948570f290714b62ac"
 
   def install
-    cd "elasticsearch-8.17.4" do
+    cd "elasticsearch-8.17.4-darwin-x86_64" do
       prefix.install Dir["*"]
     end
   end
 
-  def service
-    run [opt_prefix/"elasticsearch"]
+  service do
+    command [opt_bin/"elasticsearch"]
     environment_variables(
       "JAVA_HOME" => "/opt/homebrew/opt/openjdk@17"
     )
