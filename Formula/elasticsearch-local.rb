@@ -12,7 +12,7 @@ class ElasticsearchLocal < Formula
   end
 
   def service
-    run [opt_prefix/"bin"/"elasticsearch"]
+    run [opt_prefix/"elasticsearch"]
     environment_variables(
       "JAVA_HOME" => "/opt/homebrew/opt/openjdk@17"
     )
