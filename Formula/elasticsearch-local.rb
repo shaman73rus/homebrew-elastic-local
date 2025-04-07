@@ -7,7 +7,7 @@ class ElasticsearchLocal < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/elasticsearch"
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   service do
