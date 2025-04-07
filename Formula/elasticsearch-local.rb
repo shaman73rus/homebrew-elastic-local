@@ -9,41 +9,13 @@ class ElasticsearchLocal < Formula
     prefix.install Dir["*"]
   end
 
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-
-          <key>ProgramArguments</key>
-          <array>
-            <string>/opt/homebrew/opt/elasticsearch-8.17.4/bin/elasticsearch</string>
-          </array>
-
-          <key>WorkingDirectory</key>
-          <string>/opt/homebrew/opt/elasticsearch-8.17.4</string>
-
-          <key>EnvironmentVariables</key>
-          <dict>
-            <key>JAVA_HOME</key>
-            <string>/opt/homebrew/opt/openjdk@17</string>
-          </dict>
-
-          <key>KeepAlive</key>
-          <true/>
-
-          <key>RunAtLoad</key>
-          <true/>
-
-          <key>StandardOutPath</key>
-          <string>/tmp/elasticsearch-local.out.log</string>
-          <key>StandardErrorPath</key>
-          <string>/tmp/elasticsearch-local.err.log</string>
-        </dict>
-      </plist>
-    EOS
+  def service
+    run [opt_bin/"bin/elasticsearch"]
+    environment_variables(
+      "JAVA_HOME" => "/opt/homebrew/opt/openjdk@17"
+    )
+    working_dir opt_prefix
+    log_path "/tmp/elasticsearch-local.log"
+    error_log_path "/tmp/elasticsearch-local.error.log"
   end
 end
