@@ -9,13 +9,11 @@ class ElasticsearchLocal < Formula
     prefix.install Dir["*"]
   end
 
-  def service
-    run [opt_prefix/"bin/elasticsearch"]
-    environment_variables(
-      "JAVA_HOME" => "/opt/homebrew/opt/openjdk@17"
-    )
+  service do
+    run [opt_bin/"bin/elasticsearch"]
     working_dir opt_prefix
-    log_path var/"log/elasticsearch-local.log"
-    error_log_path var/"log/elasticsearch-local-error.log"
+    environment_variables JAVA_HOME: "/opt/homebrew/opt/openjdk@17"
+    log_path "/tmp/elasticsearch-local.log"
+    error_log_path "/tmp/elasticsearch-local.err.log"
   end
 end
