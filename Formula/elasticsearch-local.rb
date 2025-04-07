@@ -2,7 +2,7 @@ class ElasticsearchLocal < Formula
   desc "Local elasticsearch instance with custom service"
   homepage "https://github.com/shaman73rus/homebrew-elastic-local"
   version "8.17.4"
-  url "file:///opt/homebrew/elasticsearch-8.17.4-darwin-x86_64.tar.gz"
+  url "file:///opt/homebrew/opt/elasticsearch-8.17.4-darwin-x86_64.tar.gz"
   sha256 "dummy" # неважно, так как мы не используем скачивание
 
   def install
@@ -20,11 +20,11 @@ class ElasticsearchLocal < Formula
 
           <key>ProgramArguments</key>
           <array>
-            <string>/opt/homebrew/elasticsearch-8.17.4/bin/elasticsearch</string>
+            <string>/opt/homebrew/opt/elasticsearch-8.17.4/bin/elasticsearch</string>
           </array>
 
           <key>WorkingDirectory</key>
-          <string>/opt/homebrew/elasticsearch-8.17.4</string>
+          <string>/opt/homebrew/opt/elasticsearch-8.17.4</string>
 
           <key>EnvironmentVariables</key>
           <dict>
